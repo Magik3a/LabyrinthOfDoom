@@ -61,7 +61,7 @@ namespace LabyrinthOfDoom
                 Console.SetCursorPosition(col, row);
                 Console.Write("*");
                 Console.SetCursorPosition(col, row);
-                if (col == 9 && row == 11 && counter == 0)
+                if (col == 32 && row == 27 && counter == 0)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on first level :)");
@@ -71,7 +71,7 @@ namespace LabyrinthOfDoom
                     Console.Clear();
                     break;
                 }
-                if (col == 9 && row == 11 && counter == 1)
+                if (col == 31 && row == 9 && counter == 1)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on second level :)");
@@ -81,7 +81,7 @@ namespace LabyrinthOfDoom
                     Console.Clear();
                     break;
                 }
-                if (col == 11 && row == 11 && counter == 2)
+                if (col == 31 && row == 24 && counter == 2)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on third level :)");

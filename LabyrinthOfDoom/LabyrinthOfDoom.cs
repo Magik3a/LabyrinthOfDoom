@@ -16,10 +16,11 @@ namespace LabyrinthOfDoom
 
         static void Main(string[] args)
         {
-            Console.SetWindowSize(50, 20);
+            Console.SetWindowSize(80, 50);
+            Console.Title = "Labyrinth Of Doom";
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            for (int level = 0; level < 3; level++)
+            for (int level = 2; level < 3; level++)
             {
                 bool[][] mazeLayout = Level1Matrix.GetMatrix();
                 switch (level)
@@ -34,7 +35,7 @@ namespace LabyrinthOfDoom
                 {
                     for (int j = 0; j < mazeLayout[i].Length; j++)
                     {
-                        Console.Write(mazeLayout[i][j] ? wallchar : mazechar);
+                        Console.Write(( mazeLayout[i][j] ? wallchar : mazechar));
                     }
                     Console.Write("\n");
                 }
