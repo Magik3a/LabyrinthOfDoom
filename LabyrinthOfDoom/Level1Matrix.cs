@@ -3,34 +3,27 @@ namespace LabyrinthOfDoom
 {
     class Level1Matrix
     {
-        public static char[,] GetMatrix()
+        public static bool[][] GetMatrix()
         {
-            char[,] matrix =  {
-                {'*','*', '*', '*', '*', '*', '*', '*', '*' ,'*'},
-                {' ',' ', ' ', ' ', '*', ' ', ' ', ' ', ' ','*'},
-                {'*','*', '*', ' ', '*', ' ', '*', '*', ' ','*'},
-                {'*',' ', ' ', ' ', ' ', ' ', ' ', '*', ' ','*'}, 
-                {'*',' ', '*', '*', '*', '*', '*', '*', ' ','*'}, 
-                {'*',' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' '},
-                {'*','*', '*', '*', '*', '*', '*', '*', '*','*'},
-                };
-            return matrix;
-        }
-
-
-        public static void PrintMatrix()
-        {
-            char[,] matrix = Level1Matrix.GetMatrix();
-            for (int row = 0; row < matrix.GetLength(0); row++)
-            {
-                for (int col = 0; col < matrix.GetLength(1); col++)
+            bool[][] mazeLayout = 
                 {
-                    System.Console.Write("{0, 2}", matrix[row, col]);
-                }
-                System.Console.WriteLine();
-            }
-            System.Console.WriteLine();
+                    new[] {true, true, true, true, true, true, true, true},
+                    new[] {true, true, true, true, true, true, true, true},
+                    new[] {true, false, false, false, false, false, false, true},
+                    new[] {true, false, true, true, true, true, false, true},
+                    new[] {true, false, true, false, false, false, false, true},
+                    new[] {true, false, true, false, false, false, false, true},
+                    new[] {true, false, true, false, false, false, false, true},
+                    new[] {true, false, true, false, true, true, true, true},
+                    new[] {true, false, true, false, false, false, false, true},
+                    new[] {true, false, true, true, true, true, false, true},
+                    new[] {true, false, false, false, false, false, false, false},
+                    new[] {true, true, true, true, true, true, true, true}
+                };
+           
+            return mazeLayout;
         }
+        
     }
 
 }

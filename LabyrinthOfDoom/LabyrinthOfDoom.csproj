@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="LabyrinthOfDoom.cs" />
     <Compile Include="Level1Matrix.cs" />
+    <Compile Include="Level2Matrix.cs" />
+    <Compile Include="Level3Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
