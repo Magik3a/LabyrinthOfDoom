@@ -10,17 +10,29 @@ namespace LabyrinthOfDoom
 {
     class LabyrinthOfDoom
     {
+        
         private const char wallchar = '\u2588';
         private const char mazechar = '\u0020';
 
 
         static void Main(string[] args)
         {
-            Console.SetWindowSize(80, 50);
+            Console.SetWindowSize(60, 36);
             Console.Title = "Labyrinth Of Doom";
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            for (int level = 2; level < 3; level++)
+            Console.Clear();
+            Console.WriteLine("\n\n\n\n\n");
+            Console.WriteLine("      Game: Labyrinth Of Doom ");
+            Console.WriteLine("      Target: Find the way out \n\n");
+            Console.WriteLine("      Controllers: \n        Up: W Down: S \n        Left: A Right: D");
+            Console.WriteLine("\n\n      Press enter to start:");
+            Console.WriteLine("\n\n\n\n\n\n");
+            Console.WriteLine("    Developed by: Svetlin Krastanov");
+            Console.SetCursorPosition(15, 16);
+            Console.ReadLine();
+            Console.Clear();
+            for (int level = 0; level < 3; level++)
             {
                 bool[][] mazeLayout = Level1Matrix.GetMatrix();
                 switch (level)
@@ -44,7 +56,7 @@ namespace LabyrinthOfDoom
 
 
             }
-            Console.WriteLine("\n\n\n\n   Yeaaaa You beat the game!");
+            Console.WriteLine("\n\n\n\n   Yeaaaa You beat the game! \n\n  You should be proud of yourself \n             :)");
             Console.ReadLine();
         }
 

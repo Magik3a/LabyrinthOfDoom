@@ -81,7 +81,7 @@ namespace LabyrinthOfDoom
                     Console.Clear();
                     break;
                 }
-                if (col == 31 && row == 24 && counter == 2)
+                if (col == 33 && row == 24 && counter == 2)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on third level :)");
