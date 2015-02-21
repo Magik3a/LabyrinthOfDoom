@@ -7,18 +7,19 @@ namespace LabyrinthOfDoom
         {
             bool[][] mazeLayout = 
                 {
-                    new[] {true, true, true, true, true, true, true, true},
-                    new[] {true, true, true, true, true, true, true, true},
-                    new[] {true, false, false, false, false, false, false, true},
-                    new[] {true, false, true, true, true, true, false, true},
-                    new[] {true, false, true, false, false, false, false, true},
-                    new[] {true, false, true, false, false, false, false, true},
-                    new[] {true, false, true, false, false, false, false, true},
-                    new[] {true, false, true, false, true, true, true, true},
-                    new[] {true, false, true, false, false, false, false, true},
-                    new[] {true, false, true, true, true, true, false, true},
-                    new[] {true, false, false, false, false, false, false, false},
-                    new[] {true, true, true, true, true, true, true, true}
+                     new[] {true, true, true,  true,  true,  true,  true,  true,  true, true},
+                    new[] {true, true, true,  true,  true,  true,  true,  true,  true, true},
+                    new[] {true, true, false, false, false, false, false, false, true, true},
+                    new[] {true, true, false, true,  true,  true,  true,  false, true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true, true},
+                    new[] {true, true, false, true,  false, true,  true,  true,  true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true, true},
+                    new[] {true, true, false, true,  true,  true,  true,  false, true, true},
+                    new[] {true, true, false, false, false, false, false, false, false, false},
+                    new[] {true, true, true,  true,  true,  true,  true,  true,  true, true},
+                    new[] {true, true, true,  true,  true,  true,  true,  true,  true, true}
                 };
 
             return mazeLayout;

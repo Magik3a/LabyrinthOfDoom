@@ -3,43 +3,28 @@ namespace LabyrinthOfDoom
 {
     class Level3Matrix
     {
-        public static char[,] GetMatrix()
+        public static bool[][] GetMatrix()
         {
-            char[,] matrix =  {
-               {'*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*'},
-               {' ',' ','*',' ',' ',' ',' ','*',' ',' ','*',' ',' ','*','*',' ',' ',' ',' ','*'},
-               {'*',' ',' ','*',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'}, 
-               {'*',' ',' ',' ',' ',' ',' ',' ','*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'}, 
-               {'*',' ',' ',' ',' ',' ',' ','*',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'}, 
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'}, 
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},  
-               {'*',' ','*','*','*',' ','*',' ',' ',' ','*',' ',' ','*','*','*','*','*','*','*'}, 
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'}, 
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'}, 
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','*'}, 
-               {'*',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' '}, 
-               {'*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*'},
+            bool[][] mazeLayout = 
+                { 
+                    new[] {true, true, true,  true,  true,  true,  true,  true,  true,   true, true, true},
+                    new[] {true, true, true,  true,  true,  true,  true,  true,  true,   true, true, true},
+                    new[] {true, true, false, false, false, false, false, false, true,   true, true, true},
+                    new[] {true, true, false, true,  true,  true,  true,  false, true,   true, true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true,   true, true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true,   true, true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true,   true, true, true},
+                    new[] {true, true, false, true,  false, true,  true,  true,  true,   true, true, true},
+                    new[] {true, true, false, true,  false, false, false, false, true,   true, true, true},
+                    new[] {true, true, false, true,  true,  true,  true,  false, true,   true, true, true},
+                    new[] {true, true, false, false, false, false, false, false, false, false, false, false},
+                    new[] {true, true, true,  true,  true,  true,  true,  true,  true,   true, true, true},
+                    new[] {true, true, true,  true,  true,  true,  true,  true,  true,   true, true, true}
                 };
-            return matrix;
+
+            return mazeLayout;
         }
 
-
-        public static void PrintMatrix()
-        {
-            char[,] matrix = Level3Matrix.GetMatrix();
-            for (int row = 0; row < matrix.GetLength(0); row++)
-            {
-                for (int col = 0; col < matrix.GetLength(1); col++)
-                {
-                    System.Console.Write("{0, 2}", matrix[row, col]);
-                }
-                System.Console.WriteLine();
-            }
-            System.Console.WriteLine();
-        }
     }
 
 }
