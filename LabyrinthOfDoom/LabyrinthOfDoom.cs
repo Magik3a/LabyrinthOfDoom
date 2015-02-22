@@ -10,7 +10,7 @@ namespace LabyrinthOfDoom
 {
     class LabyrinthOfDoom
     {
-        
+
         private const char wallchar = '\u2588';
         private const char mazechar = '\u0020';
 
@@ -42,21 +42,43 @@ namespace LabyrinthOfDoom
                     default: break;
                 }
                 Console.WriteLine("");
-                //Make maze
+                //Make maze width Gold
+                
                 for (int i = 0; i < mazeLayout.Length; i++)
                 {
                     for (int j = 0; j < mazeLayout[i].Length; j++)
                     {
-                        Console.Write(( mazeLayout[i][j] ? wallchar : mazechar));
+                        if (mazeLayout[i][j])
+                        {
+                            Console.Write(wallchar);
+                        }
+                        else
+                        {
+                            if (!mazeLayout[i][j] && (j % 4 == 0))
+                            {
+                                
+                                Console.Write("$");
+
+                            }
+                            else
+                            {
+                                Console.Write(mazechar);
+                            }
+
+                        }
+
                     }
                     Console.Write("\n");
                 }
+                
+
                 Movements.Move(level);
 
 
 
             }
-            Console.WriteLine("\n\n\n\n   Yeaaaa You beat the game! \n\n  You should be proud of yourself \n             :)");
+            
+            Console.WriteLine("\n\n\n\n   Yeaaaa You beat the game! \n\n  You should be proud of yourself \n         {0}    :)");
             Console.ReadLine();
         }
 

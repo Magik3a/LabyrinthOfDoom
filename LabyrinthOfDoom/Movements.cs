@@ -14,20 +14,22 @@ namespace LabyrinthOfDoom
             bool[][] mazeLayout = Level1Matrix.GetMatrix();
             switch (counter)
             {
-                case 1: mazeLayout = Level2Matrix.GetMatrix(); break;
+                case 1: mazeLayout = Level2Matrix.GetMatrix();
+                    break;
                 case 2: mazeLayout = Level3Matrix.GetMatrix(); break;
                 default: break;
             }
-           
+
 
             Console.WriteLine("");
             int col = 1;
             int row = 3;
-
+            int gold = 0;
+            
             Console.SetCursorPosition(col, row);
-            Console.Write("*");
+            Console.Write("@");
             Console.SetCursorPosition(col, row);
-
+            //Here it is the controls
             while (true)
             {
                 ConsoleKeyInfo info = Console.ReadKey(true);
@@ -59,12 +61,25 @@ namespace LabyrinthOfDoom
                 }
 
                 Console.SetCursorPosition(col, row);
-                Console.Write("*");
+                Console.Write("@");
                 Console.SetCursorPosition(col, row);
+                
+
+
+                if (!mazeLayout[row][col] && (col % 4 == 0))
+                {
+
+                    gold += 5;
+
+                }
+
+
+                //Check if the user found exit 
                 if (col == 32 && row == 27 && counter == 0)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on first level :)");
+                    Console.WriteLine("Colected: {0}", gold);
                     Console.WriteLine("Press Enter to continue");
                     Console.ReadLine();
 
@@ -75,6 +90,7 @@ namespace LabyrinthOfDoom
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on second level :)");
+                    Console.WriteLine("Colected: {0}", gold);
                     Console.WriteLine("Press Enter to continue");
                     Console.ReadLine();
 
@@ -91,9 +107,10 @@ namespace LabyrinthOfDoom
                     Console.Clear();
                     break;
                 }
-
+                
             }
         }
+        
     }
 }
 
