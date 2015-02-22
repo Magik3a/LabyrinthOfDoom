@@ -19,18 +19,18 @@ namespace LabyrinthOfDoom
         {
             Console.SetWindowSize(60, 36);
             Console.Title = "Labyrinth Of Doom";
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.WriteLine("\n\n\n\n\n");
             Console.WriteLine("      Game: Labyrinth Of Doom ");
             Console.WriteLine("      Target: Find the way out \n\n");
             Console.WriteLine("      Controllers: \n        Up: W Down: S \n        Left: A Right: D");
-            Console.WriteLine("\n\n      Press enter to start:");
+            Console.WriteLine("\n\n      Press any key to start:");
             Console.WriteLine("\n\n\n\n\n\n");
             Console.WriteLine("    Developed by: Svetlin Krastanov");
             Console.SetCursorPosition(15, 16);
-            Console.ReadLine();
+            Console.ReadKey();
             Console.Clear();
             for (int level = 0; level < 3; level++)
             {
@@ -78,6 +78,7 @@ namespace LabyrinthOfDoom
 
             }
             
+
             Console.WriteLine("\n\n\n\n   Yeaaaa You beat the game! \n\n  You should be proud of yourself \n         {0}    :)");
             Console.ReadLine();
         }

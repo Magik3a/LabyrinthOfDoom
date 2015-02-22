@@ -70,37 +70,47 @@ namespace LabyrinthOfDoom
                 {
 
                     gold += 5;
+                    
+                    Console.SetCursorPosition(38, 4);
+                    Console.Write("You need at least  ");
+                    Console.SetCursorPosition(38, 6);
+                    Console.Write("400 gold to pass: ");
+                    Console.SetCursorPosition(38, 8);
+                    Console.Write("Gold: {0}", gold);
+
+                    Console.SetCursorPosition(col, row);
 
                 }
 
 
                 //Check if the user found exit 
-                if (col == 32 && row == 27 && counter == 0)
+                if (col == 32 && row == 27 && counter == 0 && gold >= 400)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on first level :)");
-                    Console.WriteLine("Colected: {0}", gold);
+                    Console.WriteLine("Colected gold: {0}", gold);
                     Console.WriteLine("Press Enter to continue");
                     Console.ReadLine();
 
                     Console.Clear();
                     break;
                 }
-                if (col == 31 && row == 9 && counter == 1)
+                if (col == 31 && row == 9 && counter == 1 && gold > 400)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on second level :)");
-                    Console.WriteLine("Colected: {0}", gold);
+                    Console.WriteLine("Colected gold: {0}", gold);
                     Console.WriteLine("Press Enter to continue");
                     Console.ReadLine();
 
                     Console.Clear();
                     break;
                 }
-                if (col == 33 && row == 24 && counter == 2)
+                if (col == 33 && row == 24 && counter == 2 && gold > 400)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on third level :)");
+                    Console.WriteLine("Colected gold: {0}", gold);
                     Console.WriteLine("Press Enter to continue");
                     Console.ReadLine();
 
@@ -110,6 +120,8 @@ namespace LabyrinthOfDoom
                 
             }
         }
+
+        
         
     }
 }
