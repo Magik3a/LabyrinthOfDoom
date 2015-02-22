@@ -35,12 +35,14 @@ namespace LabyrinthOfDoom
                 ConsoleKeyInfo info = Console.ReadKey(true);
                 if (info.Key == ConsoleKey.UpArrow && !mazeLayout[row - 2][col])
                 {
+                    Console.Beep(300, 10);
                     Console.Write(" ");
                     Debug.Print("W");
                     row--;
                 }
                 if (info.Key == ConsoleKey.DownArrow && !mazeLayout[row][col])
                 {
+                    Console.Beep(400, 10);
                     Console.Write(" ");
                     Debug.Print("S");
                     row++;
@@ -48,6 +50,7 @@ namespace LabyrinthOfDoom
 
                 if (info.Key == ConsoleKey.LeftArrow && !mazeLayout[row - 1][col - 1])
                 {
+                    Console.Beep(500, 10);
                     Console.Write(" ");
                     Debug.Print("A");
                     col--;
@@ -55,6 +58,7 @@ namespace LabyrinthOfDoom
 
                 if (info.Key == ConsoleKey.RightArrow && !mazeLayout[row - 1][col + 1])
                 {
+                    Console.Beep(600, 10);
                     Console.Write(" ");
                     Debug.Print("D");
                     col++;

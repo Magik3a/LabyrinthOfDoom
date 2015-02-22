@@ -25,12 +25,13 @@ namespace LabyrinthOfDoom
             Console.WriteLine("\n\n\n\n\n");
             Console.WriteLine("      Game: Labyrinth Of Doom ");
             Console.WriteLine("      Target: Find the way out \n\n");
-            Console.WriteLine("      Controllers: \n        Up: W Down: S \n        Left: A Right: D");
+            Console.WriteLine("      Controllers: \n        Up arrow: Up Down arrow: Down \n        LEft arrow: Left  \n        Right arrow: Right (believe it or not) ");
             Console.WriteLine("\n\n      Press any key to start:");
             Console.WriteLine("\n\n\n\n\n\n");
             Console.WriteLine("    Developed by: Svetlin Krastanov");
             Console.SetCursorPosition(15, 16);
             Console.ReadKey();
+            Console.Beep(800, 80);
             Console.Clear();
             for (int level = 0; level < 3; level++)
             {
@@ -70,8 +71,12 @@ namespace LabyrinthOfDoom
                     }
                     Console.Write("\n");
                 }
-                
 
+                Console.Beep(800, 100);
+                Console.Beep(1200, 100);
+                Console.Beep(800, 100);
+                Console.Beep(1200, 100);
+                Console.Beep(800, 100);
                 Movements.Move(level);
 
 
