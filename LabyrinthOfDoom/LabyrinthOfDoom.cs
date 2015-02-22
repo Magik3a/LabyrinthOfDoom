@@ -29,17 +29,18 @@ namespace LabyrinthOfDoom
             Console.WriteLine("\n\n      Press any key to start:");
             Console.WriteLine("\n\n\n\n\n\n");
             Console.WriteLine("    Developed by: Svetlin Krastanov");
-            Console.SetCursorPosition(15, 16);
+            Console.SetCursorPosition(30, 16);
             Console.ReadKey();
             Console.Beep(800, 80);
             Console.Clear();
-            for (int level = 0; level < 3; level++)
+            for (int level = 0; level < 4; level++)
             {
                 bool[][] mazeLayout = Level1Matrix.GetMatrix();
                 switch (level)
                 {
                     case 1: mazeLayout = Level2Matrix.GetMatrix(); break;
                     case 2: mazeLayout = Level3Matrix.GetMatrix(); break;
+                    case 3: mazeLayout = Level4Matrix.GetMatrix(); break;
                     default: break;
                 }
                 Console.WriteLine("");

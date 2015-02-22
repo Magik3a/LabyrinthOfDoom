@@ -17,6 +17,7 @@ namespace LabyrinthOfDoom
                 case 1: mazeLayout = Level2Matrix.GetMatrix();
                     break;
                 case 2: mazeLayout = Level3Matrix.GetMatrix(); break;
+                case 3: mazeLayout = Level4Matrix.GetMatrix(); break;
                 default: break;
             }
 
@@ -50,7 +51,7 @@ namespace LabyrinthOfDoom
 
                 if (info.Key == ConsoleKey.LeftArrow && !mazeLayout[row - 1][col - 1])
                 {
-                    Console.Beep(500, 10);
+                    
                     Console.Write(" ");
                     Debug.Print("A");
                     col--;
@@ -58,7 +59,6 @@ namespace LabyrinthOfDoom
 
                 if (info.Key == ConsoleKey.RightArrow && !mazeLayout[row - 1][col + 1])
                 {
-                    Console.Beep(600, 10);
                     Console.Write(" ");
                     Debug.Print("D");
                     col++;
@@ -111,6 +111,17 @@ namespace LabyrinthOfDoom
                     break;
                 }
                 if (col == 33 && row == 24 && counter == 2 && gold > 400)
+                {
+                    Console.Clear();
+                    Console.WriteLine("\n\n\n\n\n\nYou Found the exit on third level :)");
+                    Console.WriteLine("Colected gold: {0}", gold);
+                    Console.WriteLine("Press Enter to continue");
+                    Console.ReadLine();
+
+                    Console.Clear();
+                    break;
+                }
+                if (col == 32 && row == 29 && counter == 3 && gold > 400)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\n\n\n\n\nYou Found the exit on third level :)");
