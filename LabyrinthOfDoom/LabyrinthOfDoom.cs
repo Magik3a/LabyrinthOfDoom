@@ -18,18 +18,31 @@ namespace LabyrinthOfDoom
         static void Main(string[] args)
         {
             Console.SetWindowSize(60, 36);
-            Console.Title = "Labyrinth Of Doom";
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.ForegroundColor = ConsoleColor.Black;
+            Console.Title = "Labyrinth Of Doom";
+
             Console.Clear();
-            Console.WriteLine("\n\n\n\n\n");
-            Console.WriteLine("      Game: Labyrinth Of Doom ");
-            Console.WriteLine("      Target: Find the way out \n\n");
-            Console.WriteLine("      Controllers: \n        Up arrow: Up Down arrow: Down \n        LEft arrow: Left  \n        Right arrow: Right (believe it or not) ");
-            Console.WriteLine("\n\n      Press any key to start:");
-            Console.WriteLine("\n\n\n\n\n\n");
-            Console.WriteLine("    Developed by: Svetlin Krastanov");
-            Console.SetCursorPosition(30, 16);
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine("{0, 15} Game: Labyrinth Of Doom ", ' ');
+            Console.WriteLine("\n {0, 5}Target: Find the way out \n", ' ');
+            Console.WriteLine("{0,10}Controllers: \n{0,10}Up arrow: Up Down arrow: Down \n{0,10}LEft arrow: Left \n{0,10}Right arrow: Right (believe it or not) ", " ");
+            Console.WriteLine("\n\n      Press any key to start: \n\n");
+           
+            bool[][] arr = Level1Matrix.GetMatrix();
+            for (int i = 0; i < 15; i++)
+            {
+                Console.Write("{0, 19}", ' ');
+                for (int j = 0; j < 20; j++)
+                {
+                    Console.Write(arr[i][j]? wallchar: mazechar );
+                }
+                Console.WriteLine();
+            }
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("\n\n {0, 13}Developed by: Svetlin Krastanov", ' ');
+            Console.SetCursorPosition(30, 14);
             Console.ReadKey();
             Console.Beep(800, 80);
             Console.Clear();
@@ -52,15 +65,16 @@ namespace LabyrinthOfDoom
                     {
                         if (mazeLayout[i][j])
                         {
+                            Console.ForegroundColor = ConsoleColor.Black;
                             Console.Write(wallchar);
                         }
                         else
                         {
                             if (!mazeLayout[i][j] && (j % 4 == 0))
                             {
-                                
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
                                 Console.Write("$");
-
+                               
                             }
                             else
                             {
