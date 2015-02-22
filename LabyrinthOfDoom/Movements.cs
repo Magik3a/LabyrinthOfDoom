@@ -33,27 +33,27 @@ namespace LabyrinthOfDoom
             while (true)
             {
                 ConsoleKeyInfo info = Console.ReadKey(true);
-                if (info.Key == ConsoleKey.W && !mazeLayout[row - 2][col])
+                if (info.Key == ConsoleKey.UpArrow && !mazeLayout[row - 2][col])
                 {
                     Console.Write(" ");
                     Debug.Print("W");
                     row--;
                 }
-                if (info.Key == ConsoleKey.S && !mazeLayout[row][col])
+                if (info.Key == ConsoleKey.DownArrow && !mazeLayout[row][col])
                 {
                     Console.Write(" ");
                     Debug.Print("S");
                     row++;
                 }
 
-                if (info.Key == ConsoleKey.A && !mazeLayout[row - 1][col - 1])
+                if (info.Key == ConsoleKey.LeftArrow && !mazeLayout[row - 1][col - 1])
                 {
                     Console.Write(" ");
                     Debug.Print("A");
                     col--;
                 }
 
-                if (info.Key == ConsoleKey.D && !mazeLayout[row - 1][col + 1])
+                if (info.Key == ConsoleKey.RightArrow && !mazeLayout[row - 1][col + 1])
                 {
                     Console.Write(" ");
                     Debug.Print("D");
