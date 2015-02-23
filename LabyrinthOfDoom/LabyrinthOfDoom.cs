@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LabyrinthOfDoom;
 using System.Diagnostics;
-
+using System.Timers;
 namespace LabyrinthOfDoom
 {
     class LabyrinthOfDoom
@@ -13,29 +13,28 @@ namespace LabyrinthOfDoom
 
         private const char wallchar = '\u2588';
         private const char mazechar = '\u0020';
+        
 
-
-        static void Main(string[] args)
+        static void Main()
         {
             Console.SetWindowSize(60, 36);
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Title = "Labyrinth Of Doom";
-
             Console.Clear();
             Console.WriteLine("\n\n\n");
             Console.WriteLine("{0, 15} Game: Labyrinth Of Doom ", ' ');
             Console.WriteLine("\n {0, 5}Target: Find the way out \n", ' ');
             Console.WriteLine("{0,10}Controllers: \n{0,10}Up arrow: Up Down arrow: Down \n{0,10}LEft arrow: Left \n{0,10}Right arrow: Right (believe it or not) ", " ");
             Console.WriteLine("\n\n      Press any key to start: \n\n");
-           
+
             bool[][] arr = Level1Matrix.GetMatrix();
             for (int i = 0; i < 15; i++)
             {
                 Console.Write("{0, 19}", ' ');
                 for (int j = 0; j < 20; j++)
                 {
-                    Console.Write(arr[i][j]? wallchar: mazechar );
+                    Console.Write(arr[i][j] ? wallchar : mazechar);
                 }
                 Console.WriteLine();
             }
@@ -46,8 +45,22 @@ namespace LabyrinthOfDoom
             Console.ReadKey();
             Console.Beep(800, 80);
             Console.Clear();
+
+            PrintArray();
+            Console.WriteLine("\n\n\n\n   Yeaaaa You beat the game! \n\n  You should be proud of yourself \n         {0}    :)");
+            Console.ReadLine();
+        }
+
+
+
+        public static void PrintArray()
+        {
+           
+                
             for (int level = 0; level < 4; level++)
             {
+                
+                Console.Write("");
                 bool[][] mazeLayout = Level1Matrix.GetMatrix();
                 switch (level)
                 {
@@ -58,7 +71,7 @@ namespace LabyrinthOfDoom
                 }
                 Console.WriteLine("");
                 //Make maze width Gold
-                
+
                 for (int i = 0; i < mazeLayout.Length; i++)
                 {
                     for (int j = 0; j < mazeLayout[i].Length; j++)
@@ -74,7 +87,7 @@ namespace LabyrinthOfDoom
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                                 Console.Write("$");
-                               
+
                             }
                             else
                             {
@@ -92,18 +105,16 @@ namespace LabyrinthOfDoom
                 Console.Beep(800, 100);
                 Console.Beep(1200, 100);
                 Console.Beep(800, 100);
+                Console.SetWindowSize(60, 40);
+                
                 Movements.Move(level);
-
+               
 
 
             }
-            
 
-            Console.WriteLine("\n\n\n\n   Yeaaaa You beat the game! \n\n  You should be proud of yourself \n         {0}    :)");
-            Console.ReadLine();
         }
-
+      
     }
+
 }
-
-
